@@ -60,31 +60,31 @@ app.service("MainService", ["$http", function ($http) {
       roomName: "Free Verse & Slam",
       roomId: "freeVerseAndSlam"
     }
-  ]
+  ];
 
   this.poemsByCategory = [];
   this.poemById = [];
   this.submitResponse = [];
 
   this.getPoemsByCategory = function (categoryId) {
-    return $http.get("http://localhost:9000/poemboard/category/" + categoryId)
+    return $http.get("/poemboard/category/" + categoryId)
       .then(function (response) {
         return response.data;
-      })
-  }
+      });
+  };
 
   this.getPoemById = function (poemId) {
-    return $http.get('http://localhost:9000/poemboard/' + poemId).then(function (response) {
+    return $http.get('/poemboard/' + poemId).then(function (response) {
       return response.data;
-    })
-  }
+    });
+  };
 
   this.submitPoem = function (data) {
-    $http.post('http://localhost:9000/poemboard/api/userpoem/', data)
+    $http.post('/poemboard/api/userpoem/', data)
       .then(function (response) {
         this.submitResponse = response.data;
-      })
-  }
+      });
+  };
 
 
 

@@ -6,12 +6,13 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
 var unless = require('express-unless');
-
+var path = require('path');
 var config = require('./config');
 var authRoutes = require('./routes/authRoutes');
 var poemRoutesGetOnly = require('./routes/poemRoutesGet');
-
 var poemRoutes = require('./routes/poemRoutes');
+
+
 
 var port = process.env.PORT || 9000;
 mongoose.connect(config.database, function(){
@@ -23,8 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-app.use(cors());
-
+// app.use(cors());
+app.use(express.static(path.join(__dirname, "..", "frontend")));
 app.use('/poemboard', poemRoutesGetOnly);
 app.use('/poemboard/auth', authRoutes);
 app.use('/poemboard/api', expressJwt({
