@@ -24,6 +24,10 @@ authRouter.post('/login', function (req, res) {
                 if (!match) res.status(401).send("Incorrect Password");
                 else {
                     var token = jwt.sign(user, config.secret);
+                    console.log({
+                        user: user,
+                        token: token
+                    });
                     res.send({
                         user: user,
                         token: token

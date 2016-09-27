@@ -5,12 +5,12 @@ angular.module("PoetryApp")
       .then(function (data) {
         console.log(data);
         $scope.poem = data;
-      })
+      });
 }])
   .directive("poemView", function () {
     return {
       restrict: "E",
       templateUrl: "js/directives/poemViewDirective/poemView.html",
       controller: "PoemViewController"
-    }
-  })
+    };
+  });

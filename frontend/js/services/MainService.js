@@ -75,6 +75,7 @@ app.service("MainService", ["$http", function ($http) {
 
   this.getPoemById = function (poemId) {
     return $http.get('/poemboard/' + poemId).then(function (response) {
+      console.log(response);
       return response.data;
     });
   };

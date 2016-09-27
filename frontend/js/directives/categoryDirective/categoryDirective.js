@@ -4,7 +4,7 @@ angular.module("PoetryApp")
 		$scope.currentCategoryId = $routeParams.roomId;
 		$scope.categoryPoems = MainService.getPoemsByCategory($scope.currentCategoryId)
 			.then(function (data) {
-				$scope.categoryPoems = data
+				$scope.categoryPoems = data;
 			});
   }])
 	.directive("categoryDetail", function () {
@@ -12,5 +12,5 @@ angular.module("PoetryApp")
 			restrict: "E",
 			templateUrl: "js/directives/categoryDirective/categoryDetail.html",
 			controller: "CategoryDetailController"
-		}
-	})
+		};
+	});

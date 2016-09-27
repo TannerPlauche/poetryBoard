@@ -25,10 +25,11 @@ app.service('UserService', ['$http', 'TokenService', function ($http, TokenServi
 
   this.signup = function (user) {
     return $http.post(baseUrl + '/signup', user);
-  }
+  };
 
   this.login = function (user) {
     return $http.post(baseUrl + '/login', user).then(function (response) {
+      console.log(response);
       TokenService.saveToken(response.data.token);
       return response;
     });

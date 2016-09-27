@@ -3,7 +3,7 @@ angular.module("PoetryApp")
     $scope.categories = MainService.poemCategories;
     $scope.category = {};
 
-
+    
     $scope.submitPoem = function () {
       $scope.poem = {
         title: $scope.poemTitle,
@@ -21,11 +21,13 @@ angular.module("PoetryApp")
     };
 
     //    $scope.postPoem = MainService.submitPoem($scope.poem);
+    console.log("Reached Controller");
   }])
   .directive("poemForm", function () {
     return {
       restrict: "E",
-      templateUrl: "../frontend/js/directives/submitDirective/submitPoemForm.html",
+      templateUrl: "js/directives/submitDirective/submitPoemForm.html",
       controller: "SubmitPoemController"
-    }
-  })
+
+    };
+  });
