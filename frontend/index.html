@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PoetryApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Poetry Board</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div ng-controller="MainController">
+        <div ng-include="'partials/navbar.html'"></div>
+
+
+        <div ng-view></div>
+
+        <!--
+    <textarea ng-model='test' name="" id="" cols="30" rows="10"></textarea>
+
+<div style="white-space:pre-wrap">{{test}}</div>
+<textarea name="" id="" cols="30" rows="10">{{test}}</textarea>
+-->
+
+    </div>
+    <!--  end of controller div-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/authentication/authentication.js"></script>
+    <script src="main.js"></script>
+    <script src="js/services/MainService.js"></script>
+    <script src="js/directives/categoryDirective/categoryDirective.js"></script>
+    <script src="js/directives/submitDirective/submitDirective.js"></script>
+    <script src="js/authentication/login.js"></script>
+    <script src="js/authentication/signup.js"></script>
+    <script src="js/directives/poemViewDirective/poemView.js"></script>
+
+</body>
+
+</html>

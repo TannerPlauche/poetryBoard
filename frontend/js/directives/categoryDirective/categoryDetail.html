@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <table class="form-control table">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+      </tr>
+
+      <tr ng-repeat="poem in categoryPoems">
+        <td><a href="#/{{poem._id}}">{{poem.title}}</a></td>
+        <td>{{poem.author}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<a href=""></a>

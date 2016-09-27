@@ -1,0 +1,42 @@
+<h1>Sign Up Here</h1>
+
+
+<form class="form-signin">
+  <h2 class="form-signin-heading">Sign up</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input ng-model="username" type="userName" id="usnerName" placeholder="Username" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <label>Password</label>
+      <input ng-model="password" placeholder="Password" type="password" class="form-control" ng-focus="passwordHints = true" ng-blur="passwordHints = false">
+    </div>
+
+    <div class="col-md-4" ng-show="passwordHints">
+      <ul>
+        <li class="text-danger">Password should be longer than 8 characters</li>
+        <li class="text-danger">Password should contain at least 1 symbol</li>
+        <li class="text-danger">Password should contain a mixture of capital and lowercase letters</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <label>Confirm Password</label>
+      <input ng-model="passwordRepeat" placeholder="Password" type="password" class="form-control" ng-paste="$event.preventDefault()">
+    </div>
+    <p>{{paswordMessage}}</p>
+  </div>
+
+  <label>
+    <input type="checkbox" value="remember-me"> Remember me
+  </label>
+  <button ng-click="signup()" type="submit">Sign in</button>
+</form>
+<p>{{username}}</p>
+<p>{{password}}</p>
+<p>{{passwordRepeat}}</p>

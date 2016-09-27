@@ -1,0 +1,17 @@
+<form action="">
+  <input class="poemTitle" ng-model="poemTitle" placeholder="Title" type="text">
+  <input class="poemAuthor" ng-model="poemAuthor" placeholder="Author" type="text">
+  <textarea class="poemText" ng-model="poemText" placeholder="Enter poem here" name="" id="" cols="30" rows="10"></textarea>
+  <select ng-model="category" name="" id="" ng-options="category as category.roomName for category in categories track by category.roomName">
+    <option value="">Category</option>
+  </select>
+
+  <button ng-click="submitPoem()">Submit Poem</button>
+<p>
+  title: {{poemTitle}}</p>
+<p>category here {{category.roomId}}</p>
+<div>category {{poem.title}}</div>
+<div>category {{poem.author}}</div>
+<div>category {{poem.body}}</div>
+<div>category {{poem.category}}</div>
+</form>
